@@ -13,13 +13,15 @@ const UserSchema = new Schema({
   },
   password: {
     type: String,  // Changed from 'typeo' to 'type'
-    required: true,
-    unique:true
+    required: true
+    
   },
   date: {
     type: Date,   // Changed from 'typeo' to 'type'
     default: Date.now,  // Better to use default instead of required for dates
   },
 });
+const User = mongoose.model("user", UserSchema);
 
-module.exports = mongoose.model("user", UserSchema);
+
+module.exports = User
